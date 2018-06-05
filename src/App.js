@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import {connect} from "react-redux";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    render() {
+        let img = this.props.feed.map((item) => <img src={item.hero}/>);
+        return (
+            <div className="App">
+                {img}
+            </div>
+        );
+    }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return {
+        feed: state.feed,
+        slide: state.slide
+    }
+}
+
+export default connect(mapStateToProps)(App);
