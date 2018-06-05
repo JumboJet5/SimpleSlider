@@ -1,0 +1,12 @@
+.Slide {
+    border: 1px solid black;
+}
+
+img {
+}
+
+img:not(.isActive) {
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
+
