@@ -7,7 +7,7 @@
   height: 80px;
 }
 
-.App-logo:hover {
+.App-logo:focus {
   /*animation: App-logo-spin infinite 20s linear;*/
   height: 80px;
 }
