@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import './App.css';
 import {connect} from "react-redux";
+import Slide from "./Slide";
 
 class App extends Component {
     render() {
-        let img = this.props.feed.map((item) => <img src={item.hero}/>);
+        let img = this.props.feed.map((item, index) =>
+            <Slide
+                item={item}
+                key={index}
+                isActive={this.props.slide.cursor === index}/>);
         return (
-            <div className="App">
+            <div className="App in-row">
                 {img}
             </div>
         );
