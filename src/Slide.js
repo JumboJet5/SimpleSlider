@@ -16,10 +16,13 @@ class Slide extends Component {
                     }}
                     className={this.props.isActive?'isActive':'isNotActive'}
                     alt={this.props.text}
+                    onClick={() => this.props.setSlide(this.props.id)}
                 />
             </div>
         );
     }
 }
+
+
 
 export default Slide;
