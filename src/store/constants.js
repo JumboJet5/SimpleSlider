@@ -1,3 +1,5 @@
 export const CHANGE_CURSOR = 'CHANGE_CURSOR';
-export const TICK_CHANGE = 'TICK_CHANGE';
-export const TICK = 'TICK';
+export const TIC_CHANGE = 'TIC_CHANGE';
+export const TIC = 'TIC';
+export const STOP = 'STOP';
+export const START = 'START';

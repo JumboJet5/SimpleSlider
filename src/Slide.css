@@ -1,12 +1,42 @@
 .Slide {
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+    margin: 5px;
 }
 
 img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
 }
 
-img:not(.isActive) {
-    margin-top: 25%;
-    margin-bottom: 25%;
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.is-active-hero {
+    width: 560px;
+    height: 420px;
+}
+
+.is-not-active-hero {
+    width: 320px;
+    height: 240px;
+}
+
+.is-active {
+    width: 110px;
+    height: 110px;
+}
+
+.is-not-active {
+    width: 80px;
+    height: 80px;
+}
+
+img.is-not-active-hero img.is-not-active {
+    opacity: 0.85;
 }
 
