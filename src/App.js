@@ -6,6 +6,7 @@ import {bindActionCreators} from "redux";
 import {changeCursor} from "./store/actions/changeCursor";
 import {start} from "./store/actions/start";
 import {stop} from "./store/actions/stop";
+import PropTypes from ""
 
 class App extends Component {
     componentDidMount() {
