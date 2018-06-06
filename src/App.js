@@ -85,6 +85,24 @@ App.propTypes = {
     })
 };
 
+App.defaultProps = {
+    setSlide: () => 'setSlide',
+    start: () => 'start',
+    stop: () => 'stop',
+    feed: {
+        slider: [{
+            hero: "url1",
+            text: "test",
+            image: "url2"
+        }]
+    },
+    slide: {
+        cursor: 0,
+        auto: false,
+        skip: 0
+    },
+};
+
 function mapStateToProps(state) {
     return {
         feed: state.feed,

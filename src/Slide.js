@@ -38,4 +38,17 @@ Slide.propTypes = {
     setSlide: PropTypes.func
 };
 
+Slide.defaultProps = {
+    item: {
+        hero: "url1",
+        text: "text",
+        image: "url2"
+    },
+    isActive: false,
+    id: 0,
+    start: () => 'startSlide',
+    stop: () => 'stopSlide',
+    setSlide: () => 'slide'
+};
+
 export default Slide;

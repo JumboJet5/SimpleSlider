@@ -24,7 +24,7 @@ export const autoSlider = store => next => action => {
                 dispatch(tickChange(cursor));
                 if (skipCount === 0) dispatch({type: TIC}); //if tic wasn't stopped -> repeat tic
             }
-        }, 4000);
+        }, 10000);
         if (action.type === START) return next(action);
     } else {
         // console.log('action');
