@@ -6,7 +6,7 @@ import {bindActionCreators} from "redux";
 import {changeCursor} from "./store/actions/changeCursor";
 import {start} from "./store/actions/start";
 import {stop} from "./store/actions/stop";
-import PropTypes from ""
+import PropTypes from "prop-types";
 
 class App extends Component {
     componentDidMount() {
@@ -66,6 +66,24 @@ class App extends Component {
         );
     }
 }
+
+App.propTypes = {
+    setSlide: PropTypes.func,
+    start: PropTypes.func,
+    stop: PropTypes.func,
+    feed: PropTypes.shape({
+        slider: PropTypes.arrayOf(PropTypes.shape({
+            hero: PropTypes.string,
+            text: PropTypes.string,
+            image: PropTypes.string
+        }))
+    }),
+    slide: PropTypes.shape({
+        cursor: PropTypes.number,
+        auto: PropTypes.bool,
+        skip: PropTypes.number
+    })
+};
 
 function mapStateToProps(state) {
     return {

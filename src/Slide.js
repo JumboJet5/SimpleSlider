@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './css/Slide.css';
+import PropTypes from 'prop-types'
 
 class Slide extends Component {
     render() {
@@ -16,7 +17,7 @@ class Slide extends Component {
                     onMouseOver={() => this.props.stop()}
                     onMouseOut={() => this.props.start()}
                     className={this.props.isActive ? 'is-active-hero' : 'is-not-active-hero'}
-                    alt={this.props.text}
+                    alt={this.props.item.text}
                     onClick={() => this.props.setSlide(this.props.id)}
                 />
             </div>
@@ -24,5 +25,17 @@ class Slide extends Component {
     }
 }
 
+Slide.propTypes = {
+    item: PropTypes.shape({
+        hero: PropTypes.string,
+        text: PropTypes.string,
+        image: PropTypes.string
+    }),
+    isActive: PropTypes.bool,
+    id: PropTypes.number,
+    start: PropTypes.func,
+    stop: PropTypes.func,
+    setSlide: PropTypes.func
+};
 
 export default Slide;
