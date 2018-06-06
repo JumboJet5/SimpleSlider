@@ -17,8 +17,8 @@ img:hover {
 }
 
 .is-active-hero {
-    width: 560px;
-    height: 420px;
+    width: 504px;
+    height: 378px;
 }
 
 .is-not-active-hero {
@@ -27,13 +27,13 @@ img:hover {
 }
 
 .is-active {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
 }
 
 .is-not-active {
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
 }
 
 img.is-not-active-hero img.is-not-active {
