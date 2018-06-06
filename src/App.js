@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import './css/App.css';
 import {connect} from "react-redux";
 import Slide from "./Slide";
 import {bindActionCreators} from "redux";
@@ -13,9 +13,16 @@ class App extends Component {
     }
 
     render() {
-        let circle = this.props.feed.slider.map((_, index) =>
-            index === this.props.slide.cursor ? <span role="img" aria-label="active" key={index}>&#9899;</span> :
-                <span role="img" aria-label="non-active" key={index}>&#9898;</span>
+        let circles = this.props.feed.slider.map((_, index) =>
+            index === this.props.slide.cursor ?
+                <span role="img"
+                      aria-label="active"
+                      key={index}
+                      onClick={() => this.props.setSlide(index)}>&#9899;</span> :
+                <span role="img"
+                      aria-label="non-active"
+                      key={index}
+                      onClick={() => this.props.setSlide(index)}>&#9898;</span>
         );
         let slideQueue = [];
         let index = (this.props.slide.cursor - 1 + this.props.feed.slider.length) % this.props.feed.slider.length;
@@ -23,7 +30,7 @@ class App extends Component {
             item={this.props.feed.slider[index]}
             key={index}
             id={index}
-            isActive={this.props.slide.cursor === index}
+            isActive={false}
             setSlide={this.props.setSlide}
             stop={this.props.stop}
             start={this.props.start}
@@ -33,7 +40,7 @@ class App extends Component {
             item={this.props.feed.slider[index]}
             key={index}
             id={index}
-            isActive={this.props.slide.cursor === index}
+            isActive={true}
             setSlide={this.props.setSlide}
             stop={this.props.stop}
             start={this.props.start}
@@ -43,7 +50,7 @@ class App extends Component {
             item={this.props.feed.slider[index]}
             key={index}
             id={index}
-            isActive={this.props.slide.cursor === index}
+            isActive={false}
             setSlide={this.props.setSlide}
             stop={this.props.stop}
             start={this.props.start}
@@ -53,7 +60,7 @@ class App extends Component {
                 <div className="in-row">
                     {slideQueue}
                 </div>
-                <p>{circle}</p>
+                <p>{circles}</p>
             </div>
         );
     }
